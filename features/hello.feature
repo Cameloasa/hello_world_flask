@@ -21,3 +21,8 @@ Feature: Show welcome message
     Given user is on the date page
     When user makes GET on "/date"
     Then user gets the current date
+
+   Scenario: User submits a name via form
+    Given user is on the submit page
+    When user submits the name "Alice" via POST
+    Then user gets the message "Hello, Alice!"

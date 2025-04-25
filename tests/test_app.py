@@ -24,3 +24,9 @@ def test_date():
     response = client.get('/date')
     assert response.status_code == 200
     assert  response.data.decode() == f'Current date: {datetime.now().strftime("%Y-%m-%d")}'
+
+def test_submit():
+    client = app.test_client()
+    response = client.post('/submit', data={'name': 'Alice'})
+    assert response.status_code == 200
+    assert response.data.decode() == 'Hello, Alice!'

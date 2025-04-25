@@ -52,5 +52,16 @@ def step_then_user_gets_current_date(context):
     expected_date = f'Current date: {datetime.now().strftime("%Y-%m-%d")}'
     assert context.response.data.decode() == expected_date
 
+@given(u'user is on the submit page')
+def step_given_user_on_submit_page(context):
+    context.client = app.test_client()
+
+@when(u'user submits the name "Alice" via POST')
+def step_when_user_submits(context):
+    context.response = context.client.post('/submit', data={'name': 'Alice'})
+
+
+
+
 
 
