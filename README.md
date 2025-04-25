@@ -4,8 +4,10 @@ A simple Flask application that displays "Hello, World!" at the root URL (`/`). 
 
 ## Features
 - Displays "Hello, World!" at `http://127.0.0.1:5000/`.
+- Displays personalized greetings at `http://127.0.0.1:5000/greet/<name>` (e.g., "Hello, Alice!" for `/greet/Alice`).
+- Displays the current date at `http://127.0.0.1:5000/date` (e.g., "Current date: 2025-04-25").
 - Handles invalid routes with a 404 error.
-- Unit tests verify the main page and error handling.
+- Unit tests verify the main page, greetings, date, and error handling
 - BDD tests ensure user requirements are met.
 - Automated CI/CD pipeline runs tests on every push.
 

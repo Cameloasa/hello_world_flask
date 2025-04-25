@@ -1,4 +1,5 @@
 from app import app
+from datetime import datetime
 
 
 def test_hello():
@@ -17,3 +18,9 @@ def test_greet():
     response = client.get('/greet/Alice')
     assert response.status_code == 200
     assert response.data.decode() == 'Hello, Alice!'
+
+def test_date():
+    client = app.test_client()
+    response = client.get('/date')
+    assert response.status_code == 200
+    assert  response.data.decode() == f'Current date: {datetime.now().strftime("%Y-%m-%d")}'

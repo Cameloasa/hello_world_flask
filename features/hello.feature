@@ -16,3 +16,8 @@ Feature: Show welcome message
     Given user is on the greet page
     When user makes GET on "/greet/Alice"
     Then user gets the message "Hello, Alice!"
+
+  Scenario: User accesses the date page
+    Given user is on the date page
+    When user makes GET on "/date"
+    Then user gets the current date
