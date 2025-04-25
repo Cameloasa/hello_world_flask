@@ -1,0 +1,5 @@
+flask==2.3.2
+pytest==7.4.0
+behave==1.2.6
+gunicorn==23.0.0
+werkzeug==2.3.7
