@@ -11,3 +11,9 @@ def test_not_found():
     client = app.test_client()
     response = client.get('/invalid-route')
     assert response.status_code == 404
+
+def test_greet():
+    client = app.test_client()
+    response = client.get('/greet/Alice')
+    assert response.status_code == 200
+    assert response.data.decode() == 'Hello, Alice!'

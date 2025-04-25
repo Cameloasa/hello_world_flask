@@ -11,3 +11,8 @@ Feature: Show welcome message
     Given user is on the application
     When user makes GET on "/invalid-route"
     Then user gets a 404 error
+
+  Scenario: User accesses the greet page with a name
+    Given user is on the greet page
+    When user makes GET on "/greet/Alice"
+    Then user gets the message "Hello, Alice!"
