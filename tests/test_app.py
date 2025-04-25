@@ -6,3 +6,8 @@ def test_hello():
     response = client.get('/')
     assert response.status_code == 200
     assert response.data.decode() == 'Hello, World!'
+
+def test_not_found():
+    client = app.test_client()
+    response = client.get('/invalid-route')
+    assert response.status_code == 404
